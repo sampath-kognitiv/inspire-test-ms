@@ -1,4 +1,4 @@
-# loyalty-bank
+# inspire-test-ms
 Same JVM microservice for Bootcamp
 
 ### How to build and test locally
