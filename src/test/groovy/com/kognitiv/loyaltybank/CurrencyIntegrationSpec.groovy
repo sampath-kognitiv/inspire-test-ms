@@ -1,6 +1,6 @@
 package com.kognitiv.loyaltybank
 
-import com.github.tomakehurst.wiremock.WireMockServer
+//import com.github.tomakehurst.wiremock.WireMockServer
 import com.kognitiv.loyaltybank.repository.CurrencyRepository
 import org.assertj.core.api.Assertions
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,16 +14,17 @@ class CurrencyIntegrationSpec extends BaseIntegrationTest {
     @Autowired
     CurrencyRepository currencyRepository
 
-    @Shared
-    WireMockServer wireMockServer = new WireMockServer(8080)
+    /*@Shared
+    WireMockServer wireMockServer = new WireMockServer(8080)*/
 
-    def setupSpec() {
+    /*def setupSpec() {
         wireMockServer.start()
     }
 
     def cleanupSpec() {
         wireMockServer.stop()
-    }
+
+    }*/
     def "get currency by id"() {
         when:
         MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/currency/$id")).andReturn()
