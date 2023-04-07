@@ -1,0 +1,32 @@
+server:
+  port: 80
+info:
+  app:
+    name: "loyalty bank"
+    version: "V1"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+      roles: SCOPE_health-details
+spring:
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/loyalty_bank
+    user: postgres
+    password: password
+  datasource:
+    url: jdbc:postgresql://localhost:5432/loyalty_bank
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 50
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
